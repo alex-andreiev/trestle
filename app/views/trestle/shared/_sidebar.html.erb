@@ -21,8 +21,9 @@
             <%= content_tag(:li, class: ("active" if current_navigation_item?(item))) do %>
               <%= link_to item.path, item.html_options do %>
                 <%= icon("nav-icon", item.icon) %>
-                <span class="nav-label"><%= item.label %></span>
-
+                <span class="nav-label">
+                  <%= t("trestle.navigation.#{item.name}" || item.label) %>
+                </span>>
                 <%= content_tag(:span, item.badge.text, class: ["badge", item.badge.html_class]) if item.badge? %>
               <% end %>
             <% end %>
